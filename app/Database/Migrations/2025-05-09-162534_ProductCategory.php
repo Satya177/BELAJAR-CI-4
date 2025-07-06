@@ -41,12 +41,12 @@ class ProductCategory extends Migration
         ]);
 
         $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('product_categoy');
+        $this->forge->createTable('product_category');
     }
 
     public function down()
     {
         //
-        $this->forge->dropTable('product_categoy');
+        $this->forge->dropTable('product_category');
     }
 }

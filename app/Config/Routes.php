@@ -57,3 +57,16 @@ $routes->group('productcategory', ['filter' => 'auth'], function ($routes) {
     $routes->post('edit/(:any)', 'ProductCategoryController::edit/$1');
     $routes->get('delete/(:any)', 'ProductCategoryController::delete/$1');
 });
+
+$routes->group('admin', ['filter' => 'auth'], function ($routes) {
+    $routes->group('diskon', function ($routes) {
+        $routes->get('/', 'Admin\DiskonController::index');
+        $routes->get('create', 'Admin\DiskonController::create');
+        $routes->post('store', 'Admin\DiskonController::store');
+        $routes->get('edit/(:num)', 'Admin\DiskonController::edit/$1');
+        $routes->post('update/(:num)', 'Admin\DiskonController::update/$1');
+        $routes->get('delete/(:num)', 'Admin\DiskonController::delete/$1');
+    });
+});
+
+
